@@ -19,7 +19,7 @@ namespace ASPDotNetAPI.Controllers
         }
 
         [HttpGet]
-        public List<Champion> GetAllChampions(int? role, string sort, int? page, int length = 10, string dir = "asc")
+        public List<Champion> GetAllChampions(int? role, string sort, int? page, int length = 4, string dir = "asc")
         {
             IQueryable<Champion> query = context.Champions;
             if (role.HasValue)
