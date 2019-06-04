@@ -28,9 +28,8 @@ namespace ASPDotNetAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ChampionsContext>(
-                options => options.UseSqlServer(
+                options => options.UseMySQL(
                     Configuration.GetConnectionString("DefaultConnection")
-
                 )
             );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

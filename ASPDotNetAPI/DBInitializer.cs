@@ -11,7 +11,8 @@ namespace ASPDotNetAPI
         public static void Initialize(ChampionsContext context)
         {
             context.Database.EnsureCreated();
-            if (!context.Champions.Any())
+
+            if (0 == context.Champions.Count())
             {
                 context.Champions.Add(new Champion() { Name = "Aatrox", Title = "The Darkin Blade", Attack = 8, Defense = 4, Magic = 3, Difficuly = 4, Role = Role.Fighter });
                 context.Champions.Add(new Champion() { Name = "Ahri", Title = "The Nine-Tailed Fox", Attack = 3, Defense = 4, Magic = 8, Difficuly = 5, Role = Role.Mage });
